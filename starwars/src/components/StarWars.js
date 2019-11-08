@@ -17,7 +17,22 @@ const StarWars = (props) => {
             });
     }, []);
     return (
+        <div>
+        {people.map(char =>(
+            <div>
+                <CharCard
+                key={char.id}
+                name={char.name}
+                gender={char.gender}
+                mass={char.mass} />
+
+            </div>
         
+
+
+
+        ))}
+        </div>
     )
 }
 export default StarWars;
