@@ -13,7 +13,7 @@ const StarWars = (props) => {
                 setPeople(response.data.results);
             })
             .catch(error => {
-                console.log('A meth head stole your data', error);
+                console.log('A jawa  stole your data', error);
             });
     }, []);
     return (
@@ -24,8 +24,13 @@ const StarWars = (props) => {
                 key={char.id}
                 name={char.name}
                 gender={char.gender}
-                mass={char.mass} />
+                mass={char.mass} 
+                height={char.height}
+                eye={char.eye_color}
+                hair={char.hair_color}
 
+
+                />
             </div>
         
 
