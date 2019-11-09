@@ -1,6 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import CharCard from './CharCard'
+import styled from 'styled-components';
+
+const CardContainer = styled.div`
+    margin: 0 auto;
+    margin-top: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+`
 
 const StarWars = (props) => {
     const [people, setPeople] = useState([]);
@@ -18,8 +29,9 @@ const StarWars = (props) => {
     }, []);
     return (
         <div>
-        {people.map(char =>(
-            <div>
+            <CardContainer>
+        {people.map((char, id) =>(
+            
                 <CharCard
                 key={char.id}
                 name={char.name}
@@ -31,12 +43,8 @@ const StarWars = (props) => {
 
 
                 />
-            </div>
-        
-
-
-
         ))}
+            </CardContainer>
         </div>
     )
 }
